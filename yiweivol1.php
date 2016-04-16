@@ -121,8 +121,7 @@ class wechatCallbackapiTest
 						    if($row_check_user[0]!=$fromUsername){
 						        $contentStr = "这是您第一次使用移维图书馆~\n请输入真实姓名,格式为关键字“姓名”加上您的名字，如：\n姓名吴君毅";
 					        }else{
-								//$sql2="SELECT open_id,FROM Users INNER JOIN Book_info WHERE open_id = '$fromUsername' AND Book_info.user_name=Users.user_name LIMIT 1";
-								//$sql2="SELECT book_name FROM Books INNER JOIN Book_info INNER JOIN Users WHERE Users.open_id = '$fromUsername' AND Book_info.open_id=Users.open_id AND Book_info.book_id = Books.book_id LIMIT 1";
+								
 								$sql1="SELECT book_name FROM Books INNER JOIN Book_info WHERE open_id = '$fromUsername' AND Book_info.book_id = Books.book_id LIMIT 1";
 								//$sql2="SELECT user_name FROM Users WHERE open_id = '$fromUsername'";
 								$check_borrow=mysqli_query($connection,$sql1);
